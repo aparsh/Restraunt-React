@@ -2,7 +2,7 @@ import * as ActionTypes from './ActionTypes';
 
 export const Dishes = (state = {
     isLoading:true,
-    errmasg:null,
+    errmsg:null,
     dishes:[]
 }, action)=>{
     switch(action.type){
