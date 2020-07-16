@@ -1,16 +1,50 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
 
-export const addComment = (dishId, rating, author, comment) => ({
+export const addComment = (comment) => ({
     type: ActionTypes.ADD_COMMENT,
-    payload: {
+    payload: comment
+});
+
+export const postComment = (dishId, rating, author, comment) => (dispatch) => {
+    const newComment = {
         dishId: dishId,
         rating: rating,
         author: author,
         comment: comment
-    }
-});
+    };
 
+    newComment.date = new Date().toISOString();
+
+    return fetch(baseUrl + 'comments', {
+        method:  'POST',
+        body: JSON.stringify(newComment),
+        headers:{
+            'Content-Type' : 'application/json'
+        },
+        credentials: 'same-origin'
+    })
+    .then(response => {
+        if(response.ok){
+            return response;
+        }
+        else{
+            var err = new Error('Error ' + response.status + ' : ' + response.statusText);
+            err.response=response;
+            throw err;
+        }
+    }, error => {
+        var errormsg = new Error(error.message);
+        throw errormsg;
+    })
+    .then(response => response.json())
+    .then(comment => dispatch(addComment(comment)))
+    .catch(error => {
+        console.log('POST comment ', error.message);
+        alert('Yor comment couldnt be podted\nError message: ' + error.message);
+    });
+    
+}
 export const fetchDishes = ()=>(dispatch)=>{
     dispatch(dishesLoading(true));
 
@@ -64,14 +98,14 @@ export const fetchComments = ()=>(dispatch)=>{
             throw errormsg;
         })
         .then(response => response.json())
-        .then(comments => dispatch(addcomments(comments)))
+        .then(comments => dispatch(addComments(comments)))
         .catch(error => dispatch(commentsFailed(error.message)));
 }
 export const commentsFailed = (errmsg) => ({
     type : ActionTypes.COMMENTS_FAILED,
     payload : errmsg
 });
-export const addcomments = (comments) => ({
+export const addComments = (comments) => ({
     type : ActionTypes.ADD_COMMENTS,
     payload : comments
 });

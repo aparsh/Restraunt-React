@@ -5,18 +5,24 @@ import{Link} from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import {Loading} from './LoadingComponent';
 import {baseUrl } from '../shared/baseUrl';
-
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
     function RenderDish({dish}) {
         if(dish!=null){
             return (
-                <Card >
-                    <CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />
-                    <CardBody>
-                        <CardTitle>{baseUrl + dish.name}</CardTitle>
-                        <CardText>{dish.description}</CardText>
-                    </CardBody>
-                </Card>
+                <FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.5) translateY(-50%)'
+                }}>
+                    <Card >
+                        <CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />
+                        <CardBody>
+                            <CardTitle>{baseUrl + dish.name}</CardTitle>
+                            <CardText>{dish.description}</CardText>
+                        </CardBody>
+                    </Card>
+                </FadeTransform>
             );
         }
         else{
@@ -40,21 +46,25 @@ import {baseUrl } from '../shared/baseUrl';
 
             var commentsList = comments.map((comment)=>{
                 return (
-                    <div className="offset-md-1">
-                        <div className="row">
-                            <p>{comment.comment}</p>
+                    <Fade in>
+                        <div className="offset-md-1">
+                            <div className="row">
+                                <p>{comment.comment}</p>
+                            </div>
+                            <div className="row">
+                                <p>--{comment.author}, <FormatDate date={comment.date} />
+                                </p>
+                            </div>
                         </div>
-                        <div className="row">
-                            <p>--{comment.author}, <FormatDate date={comment.date} />
-                            </p>
-                        </div>
-                    </div>
+                    </Fade>
                 );
             });
             return (
                 <div>
                     <h4>Comments</h4>
-                    {commentsList}
+                    <Stagger in>
+                        {commentsList}
+                    </Stagger>
                 </div>
             );
         }
@@ -86,8 +96,7 @@ class DishDeatils extends Component {
     }
     handleSubmit(values){
         console.log("the current state is: "+ JSON.stringify(values));
-        alert(this.props.dish.id);
-        this.props.addComment(this.props.dish.id, values.rating, values.author, values.comment);
+        this.props.postComment(this.props.dish.id, values.rating, values.author, values.comment);
     }
     render(){
         const CommentForm = () =>{
@@ -102,7 +111,7 @@ class DishDeatils extends Component {
                             <Label htmlFor="rating" >Rating</Label>
                             <Control.select model=".rating" name="rating"
                                         className="form-control">
-                                            <option>1</option>
+                                            <option selected>1</option>
                                             <option>2</option>
                                             <option>3</option>
                                             <option>4</option>
