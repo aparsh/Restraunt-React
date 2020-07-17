@@ -48,7 +48,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 <img src="https://github.com/aparsh/Restraunt-React/blob/master/ui-images/contactus.png?raw=true" width="350" height="400" title="hover text">
 <img src="https://github.com/aparsh/Restraunt-React/blob/master/ui-images/menu.png?raw=true" width="350" height="400" title="hover text">
 <img src="https://github.com/aparsh/Restraunt-React/blob/master/ui-images/dishDetail.png?raw=true" width="350" height="400" title="hover text">
-<img src="https://github.com/aparsh/Restraunt-React/blob/master/ui-images/login_modal.png?raw=true" width="350" height="400" title="hover text>
+<img src="https://github.com/aparsh/Restraunt-React/blob/master/ui-images/login_modal.png?raw=true" width="350" height="400" title="hover text">
 </p>                                                                                                                                    
                                                                                                                                     
 
