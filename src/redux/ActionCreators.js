@@ -1,5 +1,6 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
+import {actions} from 'react-redux-form';
 
 export const addComment = (comment) => ({
     type: ActionTypes.ADD_COMMENT,
@@ -146,3 +147,73 @@ export const addPromos = (promos) => ({
     type: ActionTypes.ADD_PROMOS,
     payload: promos
 });
+
+export const fetchLeaders = () => (dispatch) => {
+    
+    dispatch(leadersLoading(true));
+
+    return fetch(baseUrl + 'leaders')
+    .then(response => {
+        if(response.ok){
+            return response;
+        }
+        else{
+            var err = new Error('Error ' + response.status + ' : ' + response.statusText);
+            err.response=response;
+            throw err;
+        }
+    }, error => {
+        var errormsg = new Error(error.message);
+        throw errormsg;
+    })
+    .then(response => response.json())
+    .then(leaders => dispatch(addLeaders(leaders)))
+    .catch(error => dispatch(leadersFailed(error.message)));
+}
+
+export const leadersLoading = () => ({
+    type: ActionTypes.LEADERS_LOADING
+});
+
+export const leadersFailed = (errmsg) => ({
+    type: ActionTypes.LEADERS_FAILED,
+    payload: errmsg
+});
+
+export const addLeaders = (leaders) => ({
+    type: ActionTypes.ADD_LEADERS,
+    payload: leaders
+});
+
+export const postFeedback = (feedback) => (dispatch) => {
+    return fetch(baseUrl + 'feedback', {
+        method:  'POST',
+        body: JSON.stringify(feedback),
+        headers:{
+            'Content-Type' : 'application/json'
+        },
+        credentials: 'same-origin'
+    })
+    .then(response => {
+        if(response.ok){
+            return response;
+        }
+        else{
+            var err = new Error('Error ' + response.status + ' : ' + response.statusText);
+            err.response=response;
+            throw err;
+        }
+    }, error => {
+        var errormsg = new Error(error.message);
+        throw errormsg;
+    })
+    .then(response => response.json())
+    .then(feedback => {
+        dispatch(actions.reset('feedback'));
+        alert(JSON.stringify(feedback));
+    })
+    .catch(error => {
+        console.log('POST comment ', error.message);
+        alert('Yor Feedback couldn\'t be posted\nError message: ' + error.message);
+    });
+}
