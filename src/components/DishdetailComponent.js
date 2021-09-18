@@ -16,9 +16,9 @@ import { FadeTransform, Fade, Stagger } from 'react-animation-components';
                     exitTransform: 'scale(0.5) translateY(-50%)'
                 }}>
                     <Card >
-                        <CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />
+                        <CardImg width="100%" src={dish.image} alt={dish.name} />
                         <CardBody>
-                            <CardTitle>{baseUrl + dish.name}</CardTitle>
+                            <CardTitle>{dish.name}</CardTitle>
                             <CardText>{dish.description}</CardText>
                         </CardBody>
                     </Card>

@@ -1,4 +1,4 @@
-export const COMMENTS = 
+export var COMMENTS = 
 [
     {
         id: 0,

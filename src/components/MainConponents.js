@@ -76,8 +76,8 @@ class Main extends Component{
       <div>
         <Header />
         <div className="container">
-          <TransitionGroup>
-            <CSSTransition key={this.props.location.key} classNames='page'>
+          {/* <TransitionGroup>
+            <CSSTransition key={this.props.location.key} classNames='page'> */}
                 <Switch>
                     <Route path="/home" component={HomePage}/>
                     <Route exact path="/menu" component={ ()=> <Menu dishes={this.props.dishes}/> }/>
@@ -88,8 +88,8 @@ class Main extends Component{
                     <Route path="/about" component={()=> <About leaders={this.props.leaders}/>}/>
                     <Redirect to="/home"/>
                 </Switch>
-            </CSSTransition>
-          </TransitionGroup>
+            {/* </CSSTransition>
+          </TransitionGroup> */}
         </div>
         <Footer />
       </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron, Nav,
 Button, Modal, ModalBody, ModalHeader, Form ,FormGroup, Input, Label} from 'reactstrap';
 import {NavLink} from 'react-router-dom';
-
+import logo from '../assets/images/logo.png'
 
 class Header extends Component {
 
@@ -42,7 +42,7 @@ class Header extends Component {
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav}/>
                         <NavbarBrand href="/" className="mr-auto">
-                        <img src='assets/images/logo.png' height="30" width="41" 
+                        <img src={logo} height="30" width="41" 
                         alt='Ristorante Con Fusion' />
                         </NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>

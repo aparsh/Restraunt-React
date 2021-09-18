@@ -1,8 +1,9 @@
+import buffet from '../assets/images/buffet.png'
 export const PROMOTIONS = [
     {
       id: 0,
       name: 'Weekend Grand Buffet',
-      image: '/assets/images/buffet.png',
+      image: buffet,
       label: 'New',
       price: '19.99',
       featured: true,
