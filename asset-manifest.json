@@ -1,26 +1,33 @@
 {
   "files": {
     "main.css": "/Restraunt-React/static/css/main.f284b0cb.chunk.css",
-    "main.js": "/Restraunt-React/static/js/main.3c0f83cc.chunk.js",
-    "main.js.map": "/Restraunt-React/static/js/main.3c0f83cc.chunk.js.map",
+    "main.js": "/Restraunt-React/static/js/main.781e3f63.chunk.js",
+    "main.js.map": "/Restraunt-React/static/js/main.781e3f63.chunk.js.map",
     "runtime-main.js": "/Restraunt-React/static/js/runtime-main.a499265c.js",
     "runtime-main.js.map": "/Restraunt-React/static/js/runtime-main.a499265c.js.map",
     "static/css/2.b075f7f5.chunk.css": "/Restraunt-React/static/css/2.b075f7f5.chunk.css",
-    "static/js/2.ecf3a3d9.chunk.js": "/Restraunt-React/static/js/2.ecf3a3d9.chunk.js",
-    "static/js/2.ecf3a3d9.chunk.js.map": "/Restraunt-React/static/js/2.ecf3a3d9.chunk.js.map",
+    "static/js/2.f6a57110.chunk.js": "/Restraunt-React/static/js/2.f6a57110.chunk.js",
+    "static/js/2.f6a57110.chunk.js.map": "/Restraunt-React/static/js/2.f6a57110.chunk.js.map",
     "index.html": "/Restraunt-React/index.html",
-    "precache-manifest.1bc3ae40600ad480cb814f274b615f9d.js": "/Restraunt-React/precache-manifest.1bc3ae40600ad480cb814f274b615f9d.js",
+    "precache-manifest.184d5a9b91d8d063ce8621bc411f3242.js": "/Restraunt-React/precache-manifest.184d5a9b91d8d063ce8621bc411f3242.js",
     "service-worker.js": "/Restraunt-React/service-worker.js",
     "static/css/2.b075f7f5.chunk.css.map": "/Restraunt-React/static/css/2.b075f7f5.chunk.css.map",
     "static/css/main.f284b0cb.chunk.css.map": "/Restraunt-React/static/css/main.f284b0cb.chunk.css.map",
-    "static/js/2.ecf3a3d9.chunk.js.LICENSE.txt": "/Restraunt-React/static/js/2.ecf3a3d9.chunk.js.LICENSE.txt",
-    "static/media/font-awesome.css": "/Restraunt-React/static/media/fontawesome-webfont.fee66e71.woff"
+    "static/js/2.f6a57110.chunk.js.LICENSE.txt": "/Restraunt-React/static/js/2.f6a57110.chunk.js.LICENSE.txt",
+    "static/media/aparsh.jpg": "/Restraunt-React/static/media/aparsh.39a9e70e.jpg",
+    "static/media/buffet.png": "/Restraunt-React/static/media/buffet.96d6bd20.png",
+    "static/media/elaicheesecake.png": "/Restraunt-React/static/media/elaicheesecake.a1c19f6d.png",
+    "static/media/font-awesome.css": "/Restraunt-React/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/logo.png": "/Restraunt-React/static/media/logo.eb267f35.png",
+    "static/media/uthappizza.png": "/Restraunt-React/static/media/uthappizza.c8fcf9ae.png",
+    "static/media/vadonut.png": "/Restraunt-React/static/media/vadonut.986a2644.png",
+    "static/media/zucchipakoda.png": "/Restraunt-React/static/media/zucchipakoda.e54b2833.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a499265c.js",
     "static/css/2.b075f7f5.chunk.css",
-    "static/js/2.ecf3a3d9.chunk.js",
+    "static/js/2.f6a57110.chunk.js",
     "static/css/main.f284b0cb.chunk.css",
-    "static/js/main.3c0f83cc.chunk.js"
+    "static/js/main.781e3f63.chunk.js"
   ]
 }
